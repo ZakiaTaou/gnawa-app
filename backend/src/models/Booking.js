@@ -22,7 +22,7 @@ const Booking = sequelize.define('bookings', {
     type: DataTypes.STRING(20),
     allowNull: false
   },
-  number_of_seats: {
+  number_of_tickets: {
     type: DataTypes.INTEGER,
     allowNull: false,
     defaultValue: 1,
