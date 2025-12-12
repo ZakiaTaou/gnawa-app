@@ -1,4 +1,5 @@
 import Booking from '../models/Booking.js';
+import { generateConfirmationCode } from '../utils/generateCode.js';
 
 export const createBooking = async (req, res) => {
   try {
