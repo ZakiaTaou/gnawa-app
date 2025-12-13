@@ -1,43 +1,36 @@
-import { Stack } from "expo-router";
+import { Stack } from 'expo-router';
+import { COLORS } from '../constants/colors';
 
 export default function RootLayout() {
   return (
     <Stack
       screenOptions={{
-        headerShown: false,
+        headerStyle: { backgroundColor: COLORS.background },
+        headerTintColor: COLORS.text,
+        headerTitleStyle: { fontWeight: 'bold' },
+        contentStyle: { backgroundColor: COLORS.background },
       }}
-    />
+    >
+      <Stack.Screen 
+        name="index" 
+        options={{ title: 'Grande Soirée Gnawa' }} 
+      />
+      <Stack.Screen 
+        name="artists" 
+        options={{ title: 'Artistes Gnawa' }} 
+      />
+      <Stack.Screen 
+        name="artist/[id]" 
+        options={{ title: 'Détails Artiste' }} 
+      />
+      <Stack.Screen 
+        name="booking" 
+        options={{ title: 'Réservation' }} 
+      />
+      <Stack.Screen 
+        name="myBookings" 
+        options={{ title: 'Mes Réservations' }} 
+      />
+    </Stack>
   );
 }
-
-// food-waste-sharing-app/
-// │
-// ├── app/                         # Tous tes écrans ici
-// │   ├── _layout.js               # Structure principale de navigation
-// │   ├── index.js                 # Écran d'accueil (carte ou welcome)
-// │   ├── login.js                 # Connexion
-// │   ├── signup.js                # Inscription
-// │   ├── add-offering.js          # Ajouter une offre
-// │   ├── offering/[id].js         # Détail d’une offre (page dynamique)
-// │   ├── my-offerings.js          # Mes offres partagées
-// │   └── profile.js               # Profil utilisateur
-// │
-// ├── assets/                      # Images, icônes, splash...
-// │   ├── logo.png
-// │   └── placeholder-food.jpg
-// │
-// ├── src/
-// │   ├── firebase/                # Configuration Firebase
-// │   │   └── firebaseConfig.js
-// │   │
-// │   ├── components/              # Composants réutilisables
-// │   │   ├── FoodCard.js
-// │   │   └── Button.js
-// │   │
-// │   └── utils/                   # Fonctions utiles
-// │       └── helpers.js
-// │
-// ├── app.json
-// ├── package.json
-// ├── babel.config.js
-// └── README.md
