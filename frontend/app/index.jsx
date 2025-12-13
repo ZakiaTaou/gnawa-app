@@ -11,7 +11,7 @@ export default function HomeScreen() {
     time: '20:00',
     location: 'Agadir, Maroc - Salle des Congrès',
     price: '150 DH',
-    banner: 'https://images.unsplash.com/photo-1514525253161-7a46d19cd819?w=1200',
+    banner: 'https://i.pinimg.com/1200x/4f/ce/06/4fce0670901872c0a9ba7e4795a0d51b.jpg',
   };
 
   return (
