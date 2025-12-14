@@ -3,9 +3,14 @@ import { Ionicons } from '@expo/vector-icons';
 import { COLORS } from '../constants/colors';
 
 export default function ArtistCard({ artist, onPress }) {
+  const formatTime = (timeString) => {
+  const [hours, minutes] = timeString.split(":");
+
+  return `${hours}:${minutes}`;
+};
   return (
     <TouchableOpacity style={styles.card} onPress={onPress}>
-      <Image source={{ uri: artist.photo }} style={styles.image} />
+      <Image source={{ uri: artist.photo_url }} style={styles.image} />
 
       <View style={styles.info}>
         <Text style={styles.name}>{artist.name}</Text>
@@ -13,7 +18,7 @@ export default function ArtistCard({ artist, onPress }) {
 
         <View style={styles.timeRow}>
           <Ionicons name="time" size={16} color={COLORS.secondary} />
-          <Text style={styles.time}>{artist.performance_time}</Text>
+          <Text style={styles.time}>{formatTime(artist.start_time)} - {formatTime(artist.end_time)}</Text>
         </View>
       </View>
 

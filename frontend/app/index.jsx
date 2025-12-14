@@ -11,6 +11,7 @@ import { Ionicons } from "@expo/vector-icons";
 import { COLORS } from "../constants/colors";
 import { useEvent } from "../hooks/useEvent";
 import { ActivityIndicator } from "react-native";
+import QueryState from "../components/QueryState";
 
 export default function HomeScreen() {
   // const eventData = {
@@ -27,26 +28,15 @@ export default function HomeScreen() {
   console.log('Data:', data);
   const event = data?.data;
 
-  if (isLoading) {
-    return (
-      <View style={styles.centerContainer}>
-        <ActivityIndicator size="large" color={COLORS.secondary} />
-        <Text style={styles.loadingText}>Chargement de l'événement...</Text>
-      </View>
-    );
-  }
-
-  if (error) {
-    return (
-      <View style={styles.centerContainer}>
-        <Ionicons name="alert-circle" size={64} color={COLORS.error} />
-        <Text style={styles.errorTitle}>Erreur de connexion</Text>
-        <Text style={styles.errorText}>
-          {error.message || "Impossible de charger les données"}
-        </Text>
-      </View>
-    );
-  }
+  if (isLoading || error) {
+  return (
+    <QueryState
+      isLoading={isLoading}
+      error={error}
+      loadingText="Chargement de l'événement..."
+    />
+  );
+}
   const formatDate = (dateString) => {
     const date = new Date(dateString);
     return date.toLocaleDateString("fr-FR", {
@@ -139,6 +129,11 @@ export default function HomeScreen() {
 }
 
 const styles = StyleSheet.create({
+  centerContainer:{
+    flex:1,
+    justifyContent:"center",
+    alignItems:"center"
+  },
   container: {
     flex: 1,
     backgroundColor: COLORS.background,
