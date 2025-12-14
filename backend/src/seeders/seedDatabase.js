@@ -16,16 +16,11 @@ const seedDatabase = async () => {
       name: "La Grande Soirée Gnawa",
       description:
         "Une soirée culturelle célébrant le patrimoine musical Gnawa à Agadir.",
-      date: new Date("2025-12-20"),
-      start_time: "19:00:00",
-      end_time: "23:00:00",
-      location: "Place du Festival",
+      date: new Date("2025-12-20T22:00:00.000"),
       venue: "Scène Principale",
       city: "Agadir",
-      price_min: 50.0,
-      price_max: 200.0,
-      banner_url: "https://example.com/banner.jpg",
-      capacity: 500,
+      price: 200.0,
+      banner_url: "https://i.pinimg.com/1200x/4f/ce/06/4fce0670901872c0a9ba7e4795a0d51b.jpg",
       status: "upcoming",
     };
 

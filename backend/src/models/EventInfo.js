@@ -14,18 +14,6 @@ const EventInfo = sequelize.define('event_info', {
     type: DataTypes.DATE,
     allowNull: false
   },
-  start_time: {
-    type: DataTypes.TIME,
-    allowNull: false
-  },
-  end_time: {
-    type: DataTypes.TIME,
-    allowNull: false
-  },
-  location: {
-    type: DataTypes.STRING(255),
-    allowNull: false
-  },
   venue: {
     type: DataTypes.STRING(255),
     allowNull: true
@@ -35,20 +23,12 @@ const EventInfo = sequelize.define('event_info', {
     allowNull: false,
     defaultValue: 'Agadir'
   },
-  price_min: {
-    type: DataTypes.DECIMAL(10, 2),
-    allowNull: false
-  },
-  price_max: {
+  price: {
     type: DataTypes.DECIMAL(10, 2),
     allowNull: false
   },
   banner_url: {
     type: DataTypes.STRING(500),
-    allowNull: true
-  },
-  capacity: {
-    type: DataTypes.INTEGER,
     allowNull: true
   },
   status: {
