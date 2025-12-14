@@ -25,7 +25,7 @@ export default function HomeScreen() {
   // };
 
   const { data, isLoading, error } = useEvent();
-  console.log('Data:', data);
+  // console.log('Data:', data);
   const event = data?.data;
 
   if (isLoading || error) {
