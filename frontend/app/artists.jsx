@@ -8,7 +8,7 @@ import QueryState from "../components/QueryState";
 
 export default function ArtistsScreen() {
   const { data, isLoading, error } = useArtists();
-  console.log(data);
+  // console.log(data);
   const artists = data?.data;
   // const artists = [
   //   {
