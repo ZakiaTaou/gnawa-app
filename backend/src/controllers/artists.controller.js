@@ -3,7 +3,7 @@ import Artist from '../models/Artist.js';
 export const getAllArtists = async (req, res) => {
   try {
     const artists = await Artist.findAll({
-      order: [['performance_time', 'ASC']]
+      // order: [['order', 'ASC']]
     });
 
     res.json({
